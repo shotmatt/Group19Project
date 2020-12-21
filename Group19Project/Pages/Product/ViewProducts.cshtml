@@ -1,0 +1,41 @@
+﻿@page
+@model Group19Project.Pages.Product.ViewProductsModel
+@{
+}
+
+<h1>| View Products |</h1>
+<br />
+
+
+<div>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Category</th>
+                <th>Product Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        @for (int i = 0; i < Model.Products.Count; i++)
+        {
+            <tr>
+                <td>@Model.Products[i].ProductID</td>
+                <td>@Model.Products[i].ProductName</td>
+                <td>@Model.Products[i].ProductPrice</td>
+                <td>@Model.Products[i].ProductCategory</td>
+                <td>@Model.Products[i].ProductDescription</td>
+                <td><a asp-page="/Product/EditProducts" asp-route-id="@Model.Products[i].ProductID">Update</a></td>
+            </tr>
+        }
+
+
+    </table>
+</div>
+
+<div>
+    <a asp-page="/Product/ProductIndex">Back to Product Management Homepage</a>
+</div>

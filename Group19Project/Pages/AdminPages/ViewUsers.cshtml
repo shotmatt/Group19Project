@@ -1,0 +1,42 @@
+﻿@page
+@model Group19Project.Pages.AdminPages.ViewUsersModel
+@{
+}
+
+<h1>| View Users |</h1>
+<br />
+<h3>User : @Model.FirstName</h3>
+<br />
+
+<div>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>UserID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email Address</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        @for (int i = 0; i < Model.Users.Count; i++)
+        {
+            <tr>
+                <td>@Model.Users[i].UserID</td>
+                <td>@Model.Users[i].FirstName</td>
+                <td>@Model.Users[i].LastName</td>
+                <td>@Model.Users[i].EmailAddress</td>
+                <td>@Model.Users[i].Role</td>
+                <td><a asp-page="/User/EditUsers" asp-route-id="@Model.Users[i].UserID">Update</a></td>
+            </tr>
+        }
+
+
+    </table>
+</div>
+
+<div>
+    <a asp-page="/User/UserManagement">Return to User Management Homepage</a>
+</div>

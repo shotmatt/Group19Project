@@ -1,0 +1,64 @@
+﻿@page
+@model Group19Project.Pages.User.DeleteUsersModel
+@{
+}
+
+<h1>| Delete Users |</h1>
+
+<div class="row">
+    <div class="col-10">
+
+        <form method="post">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Users[0].UserID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Users[0].FirstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Users[0].LastName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Users[0].EmailAddress)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Users[0].Role)
+                        </th>
+                        <th>
+                            Select Users to Delete
+                        </th>
+                    </tr>
+                </thead>
+
+
+                @for (int i = 0; i < Model.Users.Count(); i++)
+                {
+                    <tr>
+                        <td><input type="hidden" asp-for=@Model.Users[i].UserID />@Model.Users[i].UserID</td>
+
+                        <td><input type="hidden" asp-for=@Model.Users[i].FirstName />@Model.Users[i].FirstName</td>
+                        <td><input type="hidden" asp-for=@Model.Users[i].LastName />@Model.Users[i].LastName</td>
+                        <td><input type="hidden" asp-for=@Model.Users[i].EmailAddress />@Model.Users[i].EmailAddress</td>
+                        <td><input type="hidden" asp-for=@Model.Users[i].EmailAddress />@Model.Users[i].Role</td>
+                        <td>@Html.CheckBoxFor(model => model.IsSelect[i], new { @class = "form-control" })</td>
+                    </tr>
+                }
+
+            </table>
+
+            <div>
+                <input type="submit" value="Delete" />
+            </div>
+
+        </form>
+    </div>
+    <
+</div>
+
+<div>
+    <a asp-page="/User/UserManagement">Return to User Management Homepage</a>
+</div>

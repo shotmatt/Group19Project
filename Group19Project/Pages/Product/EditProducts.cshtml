@@ -1,0 +1,45 @@
+﻿@page
+@model Group19Project.Pages.Product.EditProductsModel
+@{
+}
+
+<h1>| Edit Products |</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+
+            <input type="hidden" asp-for="Products.ProductID" />
+
+
+            <div class="form-group">
+                <label asp-for="Products.ProductName" class="control-label"></label>
+                <input type="text" asp-for="Products.ProductName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Products.ProductPrice" class="control-label"></label>
+                <input type="text" asp-for="Products.ProductPrice" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Products.ProductCategory" class="control-label"></label>
+                <input type="text" asp-for="Products.ProductCategory" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Products.ProductDescription" class="control-label"></label>
+                <input type="text" asp-for="Products.ProductDescription" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="/Product/ProductIndex">Back to Product Management Homepage</a>
+</div>

@@ -1,0 +1,47 @@
+﻿@page
+@model Group19Project.Pages.UserPages.AddProductToOrderModel
+@{
+}
+
+<h1>| Add Product to Order |</h1>
+
+<h2 class="text-danger">Are you sure want to add this product to your order?</h2>
+
+<div class="table-active">
+
+    <div>
+        <label asp-for="Products.ProductName"></label>
+        <span> : </span>
+        @Model.Products.ProductName
+    </div>
+
+    <div>
+        <label asp-for="Products.ProductPrice"></label>
+        <span> : </span>
+        @Model.Products.ProductPrice
+    </div>
+
+    <div>
+        <label asp-for="Products.ProductCategory"></label>
+        <span> : </span>
+        @Model.Products.ProductCategory
+    </div>
+
+    <div>
+        <label asp-for="Products.ProductDescription"></label>
+        <span> : </span>
+        @Model.Products.ProductDescription
+    </div>
+</div>
+
+<br />
+<div>
+    <form method="post">
+        <input type="hidden" asp-for="Products.ProductID" />
+        <input type="submit" value="Add" class="btn btn-danger" />
+    </form>
+</div>
+
+<div>
+    <a asp-page="/UserPages/UserIndex">Back to Customer Homepage</a>
+</div>

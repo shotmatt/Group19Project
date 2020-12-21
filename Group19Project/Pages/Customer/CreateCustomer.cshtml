@@ -1,0 +1,47 @@
+﻿@page
+@model Group19Project.Pages.Customer.CreateCustomerModel
+@{
+}
+
+<h1>| Create a Customer Account |</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+
+
+
+
+            <div class="form-group">
+                <label asp-for="Users.FirstName" class="control-label"></label>
+                <input asp-for="Users.FirstName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Users.LastName" class="control-label"></label>
+                <input asp-for="Users.LastName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Users.EmailAddress" class="control-label"></label>
+                <input asp-for="Users.EmailAddress" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Users.Password" class="control-label"></label>
+                <input asp-for="Users.Password" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Users.Role" class="control-label"></label>
+                @Html.DropDownListFor(model => model.Users.Role, new SelectList(Model.URole), "Select Role", new { @class = "form-control", style = "width: 130px" })
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+
+
+        </form>
+    </div>
+</div>

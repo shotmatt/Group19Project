@@ -1,0 +1,34 @@
+﻿@page
+@model Group19Project.Pages.Product.ProductIndexModel
+@{
+}
+
+<h1>| Product Management Homepage |</h1>
+<br />
+
+<h2>Welcome @Model.FirstName</h2>
+
+<br />
+<div class="row">
+
+    <div class="col-sm-2">
+        <p><a asp-page="/Product/CreateProduct">Create Products</a></p>
+    </div>
+
+    <div class="col-sm-2">
+        <p><a asp-page="/Product/DeleteProducts">Delete Products</a></p>
+    </div>
+
+    <div class="col-sm-2">
+        <p><a asp-page="/Product/ViewProducts">View Products</a></p>
+    </div>
+
+    <div class="col-sm-2">
+        <p><a asp-page="/AdminPages/AdminIndex">Return to Admin Homepage</a></p>
+    </div>
+
+    <div class="col-sm-2">
+        <p><a asp-page="/Logout/Logout">Logout</a></p>
+    </div>
+
+</div>

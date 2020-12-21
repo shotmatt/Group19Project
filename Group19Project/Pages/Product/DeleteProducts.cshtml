@@ -1,0 +1,58 @@
+﻿@page
+@model Group19Project.Pages.Product.DeleteProductsModel
+@{
+}
+
+<h1>| Delete a Product |</h1>
+
+<form method="post">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Prod[0].ProductID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Prod[0].ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Prod[0].ProductPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Prod[0].ProductCategory)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Prod[0].ProductDescription)
+                </th>
+                <th>
+                    Select Products to Delete
+                </th>
+            </tr>
+        </thead>
+
+        @for (int i = 0; i < Model.Prod.Count(); i++)
+        {
+            <tr>
+                <td><input type="hidden" asp-for=@Model.Prod[i].ProductID />@Model.Prod[i].ProductID</td>
+                <td><input type="hidden" asp-for=@Model.Prod[i].ProductName />@Model.Prod[i].ProductName</td>
+                <td><input type="hidden" asp-for=@Model.Prod[i].ProductPrice />@Model.Prod[i].ProductPrice</td>
+                <td><input type="hidden" asp-for=@Model.Prod[i].ProductCategory />@Model.Prod[i].ProductCategory</td>
+                <td><input type="hidden" asp-for=@Model.Prod[i].ProductDescription />@Model.Prod[i].ProductDescription</td>
+                <td>@Html.CheckBoxFor(model => model.IsSelect[i], new { @class = "form-control" })</td>
+            </tr>
+        }
+
+    </table>
+
+    <div>
+        <input type="submit" value="Delete" />
+    </div>
+
+</form>
+
+<div>
+    <a asp-page="/Product/ProductIndex">Back to Product Management Homepage</a>
+</div>
+
+

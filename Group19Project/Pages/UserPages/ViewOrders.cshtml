@@ -1,0 +1,35 @@
+﻿@page
+@model Group19Project.Pages.UserPages.ViewOrdersModel
+@{
+}
+
+<h1>| View Current Orders |</h1>
+<br />
+
+
+<div>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>Order ID</th>
+                <th>Product Name</th>
+                <th>Product ID</th>
+            </tr>
+        </thead>
+
+        @for (int i = 0; i < Model.Orders.Count; i++)
+        {
+            <tr>
+                <td>@Model.Orders[i].OrderID</td>
+                <td>@Model.Orders[i].ProductName</td>
+                <td>@Model.Orders[i].ProductID</td>
+            </tr>
+        }
+
+
+    </table>
+</div>
+
+<div>
+    <a asp-page="/UserPages/UserIndex">Back to Customer Homepage</a>
+</div>
